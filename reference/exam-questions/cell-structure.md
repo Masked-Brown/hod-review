@@ -4,7 +4,7 @@
 
 > **What this file is.** A **small distilled set of real AQA past-paper questions** for the one validated topic, each tagged to its spec point and the **assessment objective (AO)** it tests. It is the third leg of the triple anchor: a finding cites it when a lesson *teaches* content but never *rehearses the format it is assessed in* — "your lesson covers cell fractionation but never has the class practise the 2-mark 'remove large organelles' Describe, so they never meet the low-speed-first mark point."
 >
-> **This is not a question generator.** No questions are invented here (that is out of scope — see the README). Every entry is a real AQA question identified by year/paper/question number. Six carry verbatim stems as preserved in AB's corpus; two calculation entries (Q7–Q8) are distilled from the documented mark scheme and shared question context, with that provenance flagged — their full verbatim stems are parked in the corpus and not reproduced.
+> **This is not a question generator.** No questions are invented here (that is out of scope — see the README). Every entry is a real AQA question identified by year/paper/question number, and every entry is **distilled** — the mark-scheme credit points and the assessment objective it tests, not AQA's copied question wording. Full verbatim stems stay parked in AB's `06_qrs` corpus and are not reproduced here; each entry flags that provenance.
 >
 > **Attribution & scope.** Questions © AQA, cited for educational criticism and review by year/paper/question. Mark schemes shown are AB's **distilled credit points** from his `06_qrs` corpus analysis, not verbatim AQA mark-scheme documents. AO mapping: **AO1** = demonstrate knowledge/understanding; **AO2** = apply knowledge/understanding (incl. practical and quantitative contexts); **AO3** = analyse/interpret/evaluate.
 
@@ -27,9 +27,9 @@
 
 ## Q1 — 2022 P1 Q07.2 · Cell fractionation · 2 marks · Describe · AO1
 
-**Context (verbatim):** Scientists investigated ribosomal RNA in liver cells and broke open the cells to produce a suspension of cell contents.
+> **Provenance:** real AQA question (2022 P1 Q07.2); full verbatim stem parked in AB's corpus, distilled here from the documented mark scheme and question context.
 
-> **Q.** Describe how the scientists would remove large organelles from this suspension of cell contents. [2 marks]
+**What it requires (from mark scheme):** describe how large organelles would be removed from a suspension produced by breaking open (liver) cells.
 
 **Credit points (distilled):**
 1. Centrifuge at slow / low / increasing speed(s).
@@ -41,9 +41,9 @@
 
 ## Q2 — 2022 P1 Q07.3 · Ultrastructure (rER-bound vs free ribosomes) · 3 marks · Explain · AO2
 
-**Context (verbatim):** Figure shows two tubes. Tube A (without detergent): a band of free ribosomes near the top and a lower band of bound ribosomes. Tube B (with detergent): only a band of free ribosomes. The detergent dissolves lipids.
+> **Provenance:** real AQA question (2022 P1 Q07.3); full verbatim stem and figure parked in AB's corpus, distilled here from the documented mark scheme and question context.
 
-> **Q.** Explain the position of the bands of ribosomes in tubes A and B. [3 marks]
+**What it requires (from mark scheme):** explain the positions of the ribosome bands in two centrifugation tubes — one untreated (bands of free and of bound ribosomes) and one treated with a lipid-dissolving detergent (free ribosomes only).
 
 **Credit points (distilled):**
 1. (Tube A) ribosomes bound to rough endoplasmic reticulum...
@@ -56,7 +56,9 @@
 
 ## Q3 — 2023 P1 Q01.1 · Viruses (universal features) · 2 marks · Give/Describe · AO1
 
-> **Q.** Give the three structural features found in all virus particles AND describe the function of one of these features. [2 marks]
+> **Provenance:** real AQA question (2023 P1 Q01.1); full verbatim stem parked in AB's corpus, distilled here from the documented mark scheme and question context.
+
+**What it requires (from mark scheme):** identify the three structural features common to every virus particle and state the function of one of them.
 
 **Credit points (distilled):**
 1. Genetic material, capsid **AND** attachment protein (all three — list rule: partial list scores 0 for this mark).
@@ -69,7 +71,9 @@
 
 ## Q4 — 2023 P1 Q01.2 · Viruses (acellular / non-living) · 2 marks · Explain · AO1
 
-> **Q.** Explain why viruses are described as acellular and non-living. [2 marks]
+> **Provenance:** real AQA question (2023 P1 Q01.2); full verbatim stem parked in AB's corpus, distilled here from the documented mark scheme and question context.
+
+**What it requires (from mark scheme):** explain why viruses are classified as acellular and as non-living — the two definitions credited independently.
 
 **Credit points (distilled):**
 1. (Acellular) no cell(-surface) membrane **OR** not made of cells (*accept:* no organelles / no cytoplasm).
@@ -81,7 +85,9 @@
 
 ## Q5 — 2023 P1 Q01.3 · Viruses (antibiotics) · 1 mark · Give · AO1
 
-> **Q.** Give one reason why antibiotics are not effective against viruses. [1 mark]
+> **Provenance:** real AQA question (2023 P1 Q01.3); full verbatim stem parked in AB's corpus, distilled here from the documented mark scheme and question context.
+
+**What it requires (from mark scheme):** give one reason antibiotics have no effect on viruses.
 
 **Credit points (distilled):**
 1. Do not have bacterial structures / enzymes **OR** no metabolic processes **OR** no cell wall / murein (*accept:* no ribosomes; do not make protein / replicate).
@@ -93,9 +99,9 @@
 
 ## Q6 — 2024 P1 Q03.2 · Microscopy (thin sections) · 2 marks · Explain · AO1
 
-**Context (verbatim):** A scientist prepared alveolar tissue to view using an optical microscope and cut very thin slices of the tissue.
+> **Provenance:** real AQA question (2024 P1 Q03.2); full verbatim stem parked in AB's corpus, distilled here from the documented mark scheme and question context.
 
-> **Q.** Explain why the scientist used very thin slices of alveolar tissue with the optical microscope. [2 marks]
+**What it requires (from mark scheme):** explain why very thin slices of (alveolar) tissue are used when preparing a specimen to view under an optical microscope.
 
 **Credit points (distilled):**
 1. To create a single / few layer(s) of cells (*accept:* to avoid overlapping cells).
