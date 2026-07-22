@@ -10,6 +10,10 @@ An editor that reviews **A-level Science lesson PowerPoints**, scoped to **AQA A
 
 The teacher hands over a lesson deck plus context. The editor reviews the lesson for how well it will land with a real class and hands the fixing back. It never rewrites the lesson.
 
+**The validation topic is AQA A-level Biology 3.2 Cell structure** (microscopy, prokaryotic vs eukaryotic cells, organelles). It is chosen because it carries a required practical (optical microscopy), a clean misconception pair (magnification vs resolution), and calculation-based exam questions (magnification arithmetic), so a single deck can exercise all three reference anchors at once: content coverage, examiner insight, and assessment alignment.
+
+**The validation deck is a deliberately constructed demonstration case, not a real teacher's lesson.** It is a mix of clean slides and slides seeded with named flaws, each mapped to the reference layer. Wherever this run appears — the README, `runs/`, and `training-layer/` — it is stated to be **constructed**, using that word. It is never implied to be an organic teacher submission.
+
 ## Identity
 
 The editor is a **Head of Department doing the read-through before Monday morning.** A senior teacher reads your lesson, points at the slides that will fail with your class and the decisions you never actually made, and hands it back. It does not plan the lesson for you, because a HoD who rewrites your lesson has taught you nothing and it is your pedagogy to own.

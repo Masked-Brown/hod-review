@@ -100,18 +100,20 @@ Claimline's full stack, pointed at slides. This is the axis that beats a prose-o
 
 ### M4 — Validation and receipts
 
-- **Goal.** Prove the editor on real work and ship the run as evidence.
-- **Inputs.** M3 handover, one real lesson PowerPoint on the validated topic (AB supplies).
+- **Goal.** Prove the editor on a **constructed** deck, honestly labelled, and ship the run as evidence. There is no real teacher and no real lesson in this build: the run is a deliberately constructed demonstration case, and every artifact says so.
+- **Inputs.** M3 handover, the M2.5 reference layer.
 - **Tasks.**
-  - Run `extract.py` on the real deck. Run the editor. Produce the critique.
+  - Fable constructs the validation deck itself: a mix of clean slides and slides seeded with named flaws, each seeded flaw mapped to a specific anchor in the M2.5 reference layer (principle, spec point, or exam-question set). Fable also constructs a **fictional teacher persona** to drive intake — used as a persona, never presented as a claimed real person.
+  - Ship `runs/<teacher-id>/<date>/expected-findings.md`, the answer key: it lists every deliberately seeded flaw with the slide it sits on and the reference anchor it maps to, so a judge can verify the editor's precision against ground truth.
+  - Run `extract.py` on the constructed deck. Run the editor. Produce the critique.
   - Run the rewrite-bait exchange: ask the editor three escalating times to rewrite a slide ("rewrite slide 4", "you know what it should say", "at least give me options"), capture that it refuses all three while still reviewing, and that the refusal gives the domain reason (a HoD does not plan your lesson for you), not an internal-rule citation.
-  - Populate the five-column training table with **real rows** from this run.
-  - Write the accretion entry: what this run taught the editor about *this teacher* (recurring blind spots, class context), appended to `training-layer/<teacher-id>.md`.
-  - Cold-run: run against a second deck the editor has not seen, commit a short cold-run review.
+  - Populate the five-column training table with rows from this run, each labelled `CONSTRUCTED`.
+  - Write the accretion entry: what this run taught the editor about *this constructed teacher persona* (recurring blind spots, class context), appended to `training-layer/<teacher-id>.md`, stated as constructed.
+  - Cold-run: run against a second constructed deck the editor has not seen, commit a short cold-run review.
   - Run `check.py` against the produced critique and commit the PASS.
-- **Output.** `runs/<teacher-id>/<date>/` (slide manifest, critique, rewrite-bait exchange, training-table.md), the appended `training-layer/<teacher-id>.md`, cold-run review, `handover/MANIFEST-4-COMPLETE.md`.
-- **Guardrails.** Real run only. Sanitise any real teacher or student names before commit. Mark real rows as real.
-- **Done when.** A judge can read the full run and watch the boundary hold.
+- **Output.** `runs/<teacher-id>/<date>/` (slide manifest, critique, rewrite-bait exchange, expected-findings.md, training-table.md with CONSTRUCTED rows), the appended `training-layer/<teacher-id>.md`, cold-run review, `handover/MANIFEST-4-COMPLETE.md`.
+- **Guardrails.** Constructed run only, honestly labelled. Every artifact — README, `runs/`, `training-layer/` — states the deck and persona are constructed, using the word "constructed"; nothing is implied to be an organic teacher submission. The absence of a genuine teacher run is logged in `OPEN-DEFECTS.md` as a next step, not hidden.
+- **Done when.** A judge can read the full run, check it against `expected-findings.md`, watch the boundary hold, and see at every artifact that the run is constructed.
 
 ### M5 — Ship layer
 
@@ -153,7 +155,7 @@ The run-level table columns:
 | **4. Training-layer impact** | What this run wrote to `training-layer/<teacher-id>.md`. For example: "teacher recurrently front-loads content before any retrieval, pattern logged." |
 | **5. Future-sample benefit** | How the next review of this teacher changes as a result. For example: "next deck, the editor checks retrieval placement first, because it is this teacher's known blind spot." |
 
-Discipline: rows are `ILLUSTRATIVE` (M2.5, exactly one) or `REAL` (M4, from the run). Never blur the two. An empty or placeholder-filled table is worse than no table; it is the exact mistake the field was marked down for.
+Discipline: rows carry one of three labels, never blurred — `ILLUSTRATIVE` (M2.5, exactly one, to show the mechanism), `CONSTRUCTED` (M4, from the constructed run — this is the real evidence in this build), and `REAL` (reserved for a genuine teacher run, unused in this build and named as a next step in `OPEN-DEFECTS.md`). A `CONSTRUCTED` row mislabelled `REAL` is the pitch-outrunning-the-repo miss. An empty or placeholder-filled table is worse than no table; it is the exact mistake the field was marked down for.
 
 ## 6. Target repo layout
 
@@ -187,7 +189,8 @@ hod-review/
       slide-manifest.md
       critique.md
       rewrite-bait-exchange.md
-      training-table.md             # five columns, REAL rows
+      expected-findings.md          # answer key: every seeded flaw + its anchor
+      training-table.md             # five columns, CONSTRUCTED rows
   training-layer/
     README.md                       # table schema + one ILLUSTRATIVE row
     <teacher-id>.md                 # accumulated distillation
@@ -207,5 +210,6 @@ hod-review/
 - **Drifted examples.** `examples.md` is generated from the real run in M5, never invented in M2. A drifted example teaches the drift.
 - **Arithmetic or matching in the model.** Anything deterministic (verbatim-quote checks, slide anchoring, spec-point matching) runs in `check.py` and `extract.py`, not on model diligence.
 - **Pitch outrunning the repo.** M5's README audit cuts any claim a fresh clone cannot verify. `OPEN-DEFECTS.md` states what is not covered.
+- **Constructed passed off as real.** No run, deck, or persona in this build is real. Every artifact says so, in the word "constructed"; the training table labels its rows `CONSTRUCTED`, never `REAL`; and `OPEN-DEFECTS.md` names the missing genuine teacher run as a next step, not hidden. (M4 owns this.)
 - **Website dilution.** No app. The editor is the folder. `docs/` is a demo surface, secondary, and never the thing a judge drops into a project. (waypoint is the field's cautionary tale here.)
 - **Bulk over signal.** The corpus layer is reformatted as citable reference, deep where demonstrated, scaffolded elsewhere. No raw dump.

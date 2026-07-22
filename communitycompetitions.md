@@ -71,6 +71,5 @@ Others in the field: **vera-plan-editor** (demo video, flawed-sample-plus-answer
 ## Our differentiators (what no one in the #9 field has)
 
 1. **A binary input.** Every entry reviews pasted text. Ours ingests a real PowerPoint via a deterministic extractor, and every finding is quote-checked against the extracted slide text (claimline's Rule 0, applied to an artifact nobody else touches).
-2. **A real user.** A real teacher runs it on a real lesson (Mira's move, absent so far in the #9 field).
-3. **Triple-source citations.** claimline cites one source (a regulation). Ours cites three: the pedagogical principle (Rosenshine, CLT, EEF), the AQA spec point the slide serves, and a real exam question the content is assessed by. Deeper anchoring than the current bar.
-4. **An in-domain justification for no-rewrite.** The Head of Department read-through: someone senior reads your lesson, points at what will fail with your class, and hands it back. It never plans the lesson for you.
+2. **Triple-source citations.** claimline cites one source (a regulation). Ours cites three: the pedagogical principle (Rosenshine, CLT, EEF), the AQA spec point the slide serves, and a real exam question the content is assessed by. Deeper anchoring than the current bar.
+3. **An in-domain justification for no-rewrite.** The Head of Department read-through: someone senior reads your lesson, points at what will fail with your class, and hands it back. It never plans the lesson for you.
