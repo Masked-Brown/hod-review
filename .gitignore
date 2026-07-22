@@ -4,3 +4,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+
+# Private answer key for the blind-cell-structure decks: the map of each seeded
+# flaw to its editor/reference id. Kept out of git so the decks stay a blind test.
+runs/blind-cell-structure/**/_ledger.private.md
