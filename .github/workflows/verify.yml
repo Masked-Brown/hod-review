@@ -1,15 +1,34 @@
-# Placeholder CI — scaffolded by M1 (skeleton). Owner: manifest M3.
+# CI — the enforcement gate, run on every push and PR (manifest M3).
 #
-# The real workflow runs extract.py + check.py + tests/verify.py (incl. --selftest)
-# on every push. M3 replaces this file with that gate. This placeholder is
-# manual-dispatch only so it never runs — or fails — on push before M3 exists.
-name: verify (placeholder — M3 implements)
+# "CI running both on every push" (plan.md §3 / communitycompetitions.md). Green here
+# means: extract.py round-trips the fixture deck, check.py clears every clean critique
+# and blocks every bad one on its named check, and the standalone --selftest holds.
+name: verify
 
 on:
+  push:
+  pull_request:
   workflow_dispatch: {}
 
+permissions:
+  contents: read
+
 jobs:
-  placeholder:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Skeleton placeholder. The verification gate is implemented in manifest M3."
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install python-pptx (stdlib + python-pptx only)
+        run: python -m pip install --upgrade pip python-pptx==1.0.2
+
+      - name: Verify the verifier (extract -> check, both directions)
+        run: python tests/verify.py
+
+      - name: Gate self-test (standalone, no external files)
+        run: python check.py --selftest
