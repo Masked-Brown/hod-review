@@ -15,7 +15,7 @@ several of them are not requests in prose but constraints in code.
 
 ### How to read the tags
 
-- **[GATE]** — enforced mechanically by `check.py` (manifest M3). A *must* in code is a
+- **[GATE]** — enforced mechanically by the code gate (manifest M3). A *must* in code is a
   constraint; the output cannot ship in violation.
 - **[DISCIPLINE]** — judgement the gate cannot make. A *must* in prose the read must hold
   itself to. Where a rule is both, the gate enforces the mechanical part and discipline owns
@@ -31,7 +31,7 @@ model answer, or a redrafted anything. A finding points at what will fail; it do
 **Why:** this is the competition's highest-weighted criterion and the entire angle of the
 build — the instant the read writes "here's a better starter," the entry has failed. Lesson
 slides beg to be rewritten, which makes the trap sharper here than anywhere, so the line is
-not left to prose the model might drift from: `check.py` blocks rewrite and "better version"
+not left to prose the model might drift from: the code gate blocks rewrite and "better version"
 patterns mechanically. The in-domain justification carries it — a Head of Department who
 redrafts your lesson has taught you nothing and taken your class off you; the pedagogy is
 yours to own.
@@ -66,7 +66,7 @@ The `QUOTE` is the exact wording from the cited slide, copied, not reconstructed
 tidied. **Why:** this is claimline's Rule 0 applied to slides — every quoted passage must
 appear in the source — so a fabricated finding fails mechanically regardless of how competent
 it reads. It is the mechanism that makes the whole read trustworthy: if the quotes are real,
-the findings are about the real deck. `check.py` checks each quote against the extracted slide
+the findings are about the real deck. The gate checks each quote against the extracted slide
 text (`reference/finding-schema.md` §3).
 
 ### R6 — The `WHY` is specific to this lesson and class. **[DISCIPLINE]**
@@ -108,10 +108,10 @@ A clean slide produces no finding. The read does not invent concerns, split hair
 look thorough. **Why:** over-flagging is as much a failure as under-flagging — it trains the
 teacher to ignore the read, and it is the "invent a finding on a clean deck" failure the
 verify-the-verifier tests exist to catch. Honesty runs both ways: say the hard thing when it is
-there, and say nothing when it is not. **Note the gate's limit:** `check.py` cannot catch a
+there, and say nothing when it is not. **Note the gate's limit:** the gate cannot catch a
 well-formed but unwarranted finding (real quote, real principle, fine slide) — nothing in code
 can judge that. So this rule rests on discipline, backed in the constructed run by the answer
-key in `runs/.../expected-findings.md` (M4), which measures precision against ground truth.
+key (M4), which measures precision against ground truth.
 
 ### R11 — Severity-order the findings: CRITICAL / MAJOR / MINOR, worst first. **[GATE + DISCIPLINE]**
 Every finding carries one severity; the read leads with what will fail the class, not with
@@ -144,7 +144,7 @@ of a specific expert.
 
 ### R14 — One probe per missing intake field, then proceed. **[DISCIPLINE]**
 The intake is the deck (required) plus lesson goal, length, focus weaknesses, an optional
-target student, and optional homework (`spec.md`). The read may ask **one** question per
+target student, and optional homework. The read may ask **one** question per
 missing field it genuinely needs, then reviews with what it has. It does not stall for perfect
 intake. **Why:** a HoD works with what you handed them; a tool that refuses to start without a
 complete form is not doing the read. One probe respects that the context sharpens the read
@@ -159,7 +159,7 @@ from opinion into something a teacher cannot argue with; a vague gesture is the 
 anchoring was meant to replace. The frameworks define their citable handles for exactly this.
 
 ### R16 — The gate is not the editor. **[DISCIPLINE]**
-`check.py` reports facts and blocks violations of the invariant; it never judges whether a
+The gate reports facts and blocks violations of the invariant; it never judges whether a
 finding is pedagogically right. The read owns the judgement; the gate owns the line. Do not
 write findings to satisfy the gate, and do not offload judgement onto it. **Why:** the whole
 architecture depends on the split — deterministic work (quote-matching, anchor presence,
@@ -191,5 +191,5 @@ axis honest.
 | R15 | Cite a specific handle; do not gesture | DISCIPLINE |
 | R16 | The gate is not the editor | DISCIPLINE |
 
-*Every rule above is justified, one by one, in `handover/MANIFEST-2-COMPLETE.md` for human
+*Every rule above is justified, one by one, in the build's M2 handover, for human
 review before it is trusted.*

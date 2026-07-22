@@ -2,7 +2,7 @@
 
 **Board:** AQA A-level Biology (7402) · **Reference layer for `hod-review`**
 
-> **What this file is.** The 8-topic map of AQA A-level Biology, scaffolded so the editor knows the shape of the whole subject and every finding can name the topic it sits in. **One subtopic is built to full depth** — the validated topic, **3.2 Cell structure** (`3.2-cell-structure.md`) — because depth shown on a real run beats bulk shipped and never exercised (see `plan.md` §M2.5). The remaining subtopics are listed with scope so the structure is legible and extensible; each is built to depth only when a lesson on it is reviewed.
+> **What this file is.** The 8-topic map of AQA A-level Biology, scaffolded so the editor knows the shape of the whole subject and every finding can name the topic it sits in. **One subtopic is built to full depth** — the validated topic, **3.2 Cell structure** (`3.2-cell-structure.md`) — because depth shown on a real run beats bulk shipped and never exercised (see the build plan, §M2.5). The remaining subtopics are listed with scope so the structure is legible and extensible; each is built to depth only when a lesson on it is reviewed.
 >
 > **Why scaffold-not-dump.** A block of notes no finding could ever cite is bulk, and bulk lowers the methodology score. This index carries exactly what a finding needs to place a lesson (topic code, title, one-line scope, depth status) and no more. When a new topic is reviewed, its `3.x-<slug>.md` file is built to the same depth as cell structure, from the same corpus.
 >

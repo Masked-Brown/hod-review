@@ -1,12 +1,12 @@
 # finding-schema.md — the finding contract
 
 > **What this is.** The exact shape of a finding: the fields the editor emits and the
-> fields `check.py` (manifest M3) parses and enforces. This is the single contract shared
+> fields the gate (manifest M3) parses and enforces. This is the single contract shared
 > by the editor and the gate — one file, one job. If the editor and the gate ever disagree
 > about what a finding is, this file is the source of truth and both are wrong until they
 > match it.
 
-The six fields are fixed by `spec.md`: **SLIDE, QUOTE, PRINCIPLE, SPEC, WHY, QUESTION**. This
+The six fields of the contract are **SLIDE, QUOTE, PRINCIPLE, SPEC, WHY, QUESTION**. This
 file makes them machine-parseable and states, field by field, what is *enforced in code*
 versus what is *editor discipline*.
 
@@ -43,7 +43,7 @@ Rules of the format, so a parser is unambiguous:
 
 ### How the gate locates a finding
 
-`check.py` scans for lines matching `^SEVERITY:\s*(CRITICAL|MAJOR|MINOR)\s*$`. Each match
+The gate scans for lines matching `^SEVERITY:\s*(CRITICAL|MAJOR|MINOR)\s*$`. Each match
 opens a finding; the next six non-blank lines are read as the fields by their key prefixes
 (`SLIDE:`, `QUOTE:`, `PRINCIPLE:`, `SPEC:`, `WHY:`, `QUESTION:`). A finding missing a field,
 or with fields out of order, is malformed and the gate blocks it. This keeps parsing a line
@@ -51,10 +51,10 @@ scan, not a Markdown parse.
 
 ## 2. `SLIDE`
 
-- An integer: the slide number from the extracted manifest (`extract.py` output).
+- An integer: the slide number from the extracted manifest (the extractor's output).
 - **Enforced:** the value must be a positive integer, and that slide number must exist in the
   extracted manifest for the deck under review. A finding with no `SLIDE`, or a `SLIDE` not in
-  the manifest, is blocked. *(spec.md: "A finding with no SLIDE anchor.")*
+  the manifest, is blocked. *(gate check: "A finding with no SLIDE anchor.")*
 
 ## 3. `QUOTE`
 
@@ -64,7 +64,7 @@ scan, not a Markdown parse.
 - **Enforced — the fabrication check (the load-bearing one).** The quoted span must appear
   **verbatim** in the extracted text of the cited `SLIDE`. This is claimline's Rule 0 applied
   to slides: a finding that quotes a line not on the slide fails mechanically, however
-  competent it reads. *(spec.md: "A QUOTE that does not appear verbatim in the extracted
+  competent it reads. *(gate check: "A QUOTE that does not appear verbatim in the extracted
   slide manifest.")*
 
 ### The verbatim-match rule (defined once, here)
@@ -90,7 +90,7 @@ M2 handover, not fixed here.)
 - **`SPEC`** — an AQA spec point or required practical from `reference/spec/` (authored in
   M2.5), or `—` if not used.
 - **Enforced:** at least one of `PRINCIPLE` / `SPEC` must be a real citation (not `—`). A
-  finding with neither is generic feedback, and the gate blocks it. *(spec.md: "A finding
+  finding with neither is generic feedback, and the gate blocks it. *(gate check: "A finding
   citing neither a PRINCIPLE nor a SPEC point.")*
 - **Discipline (not code):** that the cited handle is the *right* one, and that it names a
   real entry in `reference/`, is editor judgement. M3 *may* optionally validate the handle
@@ -132,13 +132,13 @@ that the block is well-formed — the gate never grades pedagogy.)*
     `?`;
   - any `QUESTION` (or any text in the document) matching a **rewrite / fix pattern** — e.g.
     "here's a better…", "here's how I'd write it", "try this instead", "change it to…", "it
-    should say…", "replace … with …", "rewritten:". *(spec.md: "Rewritten slide content, or a
+    should say…", "replace … with …", "rewritten:". *(gate checks: "Rewritten slide content, or a
     'here's a better version' pattern," and "An output that ends in a fix rather than a
-    QUESTION." The exact pattern list is operationalised in `check.py`, M3.)*
+    QUESTION." The exact pattern list is operationalised in the gate.)*
 
-## 7. What the gate blocks — the checklist (mirrors `spec.md`)
+## 7. What the gate blocks — the checklist
 
-`check.py` reads the critique and the extracted manifest and fails (exit 1) on any of:
+The gate reads the critique and the extracted manifest and fails (exit 1) on any of:
 
 1. A rewrite / "better version" pattern anywhere in the output.
 2. A finding with no `SLIDE` anchor (or a `SLIDE` not in the manifest).
@@ -158,12 +158,12 @@ They **cannot** catch a finding that is well-formed but *unwarranted* — a real
 real principle attached to a slide that was actually fine. Nothing in code can, because that
 is a pedagogical judgement and the gate is forbidden from making it. That gap is covered two
 other ways: by editor discipline (`rules.md` R10 — do not manufacture findings) and, in the
-constructed run, by `runs/.../expected-findings.md` (M4), the answer key that measures the
+constructed run, by its answer key (M4) — the record that measures the
 editor's precision and recall against known ground truth. This limit is deliberate and is
 recorded, not hidden.
 
 ---
 
-*This schema is fixed by `spec.md`; this file only makes it parseable and assigns each rule
-to code or to discipline. M3 implements `check.py` against §1–§7. M2.5 extends the `SPEC`
+*This file is the schema's source of truth; it makes the schema parseable and assigns each rule
+to code or to discipline. The gate implements §1–§7. M2.5 extends the `SPEC`
 handle set without changing this format.*

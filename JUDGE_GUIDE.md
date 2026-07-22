@@ -8,4 +8,4 @@
 a cold-test battery — including the rewrite-bait input — so a judge can confirm the
 headline claims from a fresh clone in about six minutes.
 
-See `plan.md` §3 (M5) and `communitycompetitions.md` (the bar to beat).
+See `build/plan.md` §3 (M5) and `build/communitycompetitions.md` (the bar to beat).

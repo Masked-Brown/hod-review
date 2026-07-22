@@ -8,4 +8,4 @@
 cannot drift from real output. A drifted example teaches the drift, so examples are
 never invented here in M1/M2 — they are generated from the run.
 
-See `plan.md` §3 (M5) and §7 (risk register: drifted examples).
+See the build plan (M5, and its risk register on drifted examples).
