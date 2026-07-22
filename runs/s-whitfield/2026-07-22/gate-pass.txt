@@ -1,0 +1,33 @@
+# gate-pass.txt — check.py PASS receipt (CONSTRUCTED run)
+#
+# The blocking gate (../../../check.py) run over this run's critique against the
+# slide manifest extract.py produced from lesson.pptx. Exit 0 = PASS.
+# The critique passed on the first run; no form-fix was needed (see note at foot).
+#
+# Reproduce from repo root:
+#   python extract.py runs/s-whitfield/2026-07-22/lesson.pptx -o runs/s-whitfield/2026-07-22/slide-manifest.md
+#   python check.py runs/s-whitfield/2026-07-22/critique.md runs/s-whitfield/2026-07-22/slide-manifest.md
+
+$ python check.py runs/s-whitfield/2026-07-22/critique.md runs/s-whitfield/2026-07-22/slide-manifest.md
+PASS — 9 finding(s), no violations. The read points; it does not rewrite.
+exit code: 0
+
+--- machine-readable (--json) ---
+$ python check.py runs/s-whitfield/2026-07-22/critique.md runs/s-whitfield/2026-07-22/slide-manifest.md --json
+{
+  "ok": true,
+  "findings": 9,
+  "violations": [],
+  "warnings": []
+}
+
+--- stderr (advisory PRINCIPLE/SPEC handle warnings), captured separately ---
+(none — every PRINCIPLE and SPEC handle was recognised; no advisory warnings fired)
+
+--- note ---
+The critique cleared the gate on the first run: 9 findings, 0 violations, 0 advisory
+warnings. Per plan.md M4 step 5, a gate BLOCK would be treated as a finding and the
+critique's FORM fixed (never the gate weakened) until it passed; no fix was required
+here. The gate proves form only (anchored, fabrication-free, rewrite-free, ends in a
+question) — not that the findings are pedagogically right; that is scored against
+expected-findings.md, see MANIFEST-4-COMPLETE.md.
