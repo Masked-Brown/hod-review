@@ -40,4 +40,6 @@ The scored substance (rules, reference, examples) is authored and curated by han
 
 ## The bar we are targeting
 
-Beat claimline. That means matching its stack (gate, verify-the-verifier negative tests, CI, judge guide, honest open-defects) and adding the three things it does not have: a binary input, a real user, and triple-source citations. Nobody in the field has done all of that. That is the opening.
+Beat claimline. That means matching its stack (gate, verify-the-verifier negative tests, CI, judge guide, honest open-defects) and adding the two things it does not have: a binary PowerPoint input and triple-source citations. Nobody in the field has done both of those. That is the opening.
+
+The M4 run is a constructed demonstration, honestly labelled, not a real user on a real lesson. The absence of a genuine teacher run is logged as a next step in `OPEN-DEFECTS.md`, not claimed as done.

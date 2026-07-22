@@ -81,7 +81,7 @@ Two artifacts, full spec in `plan.md` section 5.
 - **Run-level table** (`runs/<teacher-id>/<date>/training-table.md`): five columns per finding: Input, Editor reasoning, Finding and rationale, Training-layer impact, Future-sample benefit.
 - **Accumulated teacher file** (`training-layer/<teacher-id>.md`): the distilled recurring patterns for that teacher, carried across runs, so later reviews are personalised.
 
-Rows are `ILLUSTRATIVE` (one, in M2.5) or `REAL` (from the M4 run). Never blurred, never placeholder-filled.
+Rows carry one of three labels, never blurred, never placeholder-filled: `ILLUSTRATIVE` (one row, in M2.5), `CONSTRUCTED` (from the M4 run, this build's evidence), and `REAL` (reserved for a genuine teacher run, unused in this build and named as a next step in `OPEN-DEFECTS.md`).
 
 ## Out of scope (state this in the README)
 

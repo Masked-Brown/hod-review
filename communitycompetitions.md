@@ -63,10 +63,10 @@ Others in the field: **vera-plan-editor** (demo video, flawed-sample-plus-answer
 - One tight domain: A-level Science lesson editor, AQA, Biology-first.
 - The no-rewrite invariant enforced in code, not just in prose.
 - Findings triple-anchored and fabrication-checked against the source.
-- One real run shipped in full, including a refused rewrite-bait exchange.
+- One constructed run shipped in full, honestly labeled, with an answer key, including a refused rewrite-bait exchange.
 - A populated accretion layer, from that real run.
 - A judge guide with a 60-second verify and an honest open-defects file.
-- Examples generated from the real run, so they cannot drift.
+- Examples generated from the constructed run, so they cannot drift.
 
 ## Our differentiators (what no one in the #9 field has)
 
