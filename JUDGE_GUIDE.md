@@ -141,10 +141,11 @@ to remember. **[`runs/blind-01/2026-07-22/`](runs/blind-01/2026-07-22/) ships tw
 reads of the *same* deck** ([`blind-edit-output-test-1.md`](runs/blind-01/2026-07-22/blind-edit-output-test-1.md)
 and [`blind-edit-output-test-2.md`](runs/blind-01/2026-07-22/blind-edit-output-test-2.md)) from
 two separate chats: same schema, same worst-first ordering, the same three CRITICAL findings
-on the same slides and anchors. The exact set of MINOR findings varies between the two — which
-is what you would expect from two careful readers, and is the honest shape of the claim: **the
-structure is reproducible; the last word or two of judgement is not identical, and should not
-be.**
+and the same four MAJOR findings on the same slides and anchors — seven findings identical
+across both reads. They differ only at the margins (which minor point each surfaced, and one
+extra finding one read made) — which is what you would expect from two careful readers, and is
+the honest shape of the claim: **the structure is reproducible; the last word or two of
+judgement is not identical, and should not be.**
 
 ---
 

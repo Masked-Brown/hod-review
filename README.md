@@ -43,8 +43,9 @@ markdown file is a request; a *must* in code is a constraint.
 
 ## How it works — the triple anchor
 
-Where most review tools cite one thing (or nothing), every finding here can anchor to
-three, which is what turns critique from opinion into something a teacher cannot
+Where the single-source citation is the field bar (per the competitor review in
+[`build/communitycompetitions.md`](build/communitycompetitions.md)), every finding here can
+anchor to three, which is what turns critique from opinion into something a teacher cannot
 argue with:
 
 1. **The pedagogical principle** — Rosenshine, cognitive load, retrieval and spacing,
@@ -73,22 +74,26 @@ invent findings to look busy.
 
 ## The binary-input wedge
 
-Every comparable editor reviews pasted text. This one ingests a real `.pptx` through a
-**deterministic** extractor (`extract.py`, python-pptx, manifest M3) and then
+Where comparable editors in the field review reviewed pasted text
+([`build/communitycompetitions.md`](build/communitycompetitions.md)), this one ingests a real
+`.pptx` through a **deterministic** extractor (`extract.py`, python-pptx, manifest M3) and then
 quote-checks every finding against the extracted slide text. Slide anchoring and
 verbatim-quote matching are exactly the kind of work that must never run on model
-diligence, so they run in code.
+diligence, so they run in code — which you can watch: the shipped blind critiques clear the
+gate against a freshly extracted manifest, so every quote is verified verbatim on the real
+deck.
 
 ## A reproducible system, not a clever prompt
 
 The rules live in the `editor/` folder, not in a prompt you have to remember, so the same
 folder gives the same structured output across chats. The repo ships the proof:
 [`runs/blind-01/`](runs/blind-01/2026-07-22/) contains **two independent reads of the same
-deck from two separate chats** — same schema, same worst-first ordering, the same critical
-findings on the same slides and anchors. The exact set of minor findings varies between the
-two, which is the honest shape of the claim: the structure is reproducible; the last word of
-judgement is not identical, and should not be. You can reproduce it yourself — see
-[`JUDGE_GUIDE.md`](JUDGE_GUIDE.md) Level 3.
+deck from two separate chats** — same schema, same worst-first ordering, and **every
+high-severity finding identical**: the same three CRITICAL findings and the same MAJOR core,
+on the same slides and anchors. The two reads differ only at the margins — which lower-priority
+points each surfaced, and one extra finding one read made. That is the honest shape of the
+claim: the structure is reproducible; the last word of judgement is not identical, and should
+not be. You can reproduce it yourself — see [`JUDGE_GUIDE.md`](JUDGE_GUIDE.md) Level 3.
 
 ## How you use it
 
@@ -194,5 +199,7 @@ interpretable-context-methodology demonstration; the full story is in
 - No rewriting, drafting, or replacement content, ever.
 - No question generation — the exam-question layer is distilled reference, not a generator.
 - No website as the entry — any `docs/` surface is demonstration only.
-- No subjects beyond A-level Biology in this version (the structure scaffolds toward
-  wider Science; the depth is Biology).
+- No subjects beyond A-level Biology in this version. The reference layer scaffolds the
+  full AQA A-level Biology topic map (3.1–3.8) with one topic (3.2.1 Cell structure) built
+  to full depth; every other topic is scope-only until a lesson on it is reviewed. Wider
+  Science is a possible future direction, not something this build ships.

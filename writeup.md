@@ -34,8 +34,9 @@ nothing." CI runs it on every push ([`.github/workflows/verify.yml`](.github/wor
 *Evidence:* `python tests/verify.py` → `21/21 assertions passed`; `python check.py --selftest`
 → `1/1 clean cleared, 8/8 bad blocked`.
 
-**2. A binary input nobody else in the field touches.** Every comparable entry reviews pasted
-text. This one ingests a real `.pptx` through a **deterministic** extractor
+**2. A binary input the field review records no other entry touching.** Where comparable
+entries reviewed pasted text (per [`build/communitycompetitions.md`](build/communitycompetitions.md)),
+this one ingests a real `.pptx` through a **deterministic** extractor
 ([`extract.py`](extract.py), python-pptx) and then quote-checks every finding against the
 extracted slide text. Slide anchoring and verbatim-quote matching are exactly the kind of work
 that must never run on model diligence, so they run in code — this is claimline's fabrication
@@ -45,8 +46,9 @@ extracted** manifest — `python extract.py runs/blind-02/2026-07-22/blind-lesso
 python check.py runs/blind-02/2026-07-22/blind02-edit-output-test.md m.md` → `PASS — 10
 finding(s)`. Every quote is verified verbatim on the real deck.
 
-**3. Triple-source citations.** The field bar cites one source per finding (a regulation). Each
-finding here can anchor to three: the **pedagogical principle** (Rosenshine, cognitive load,
+**3. Triple-source citations.** Where the field bar cites one source per finding (per the
+review in [`build/communitycompetitions.md`](build/communitycompetitions.md)), each finding
+here can anchor to three: the **pedagogical principle** (Rosenshine, cognitive load,
 retrieval, EEF — [`editor/reference/frameworks/`](editor/reference/frameworks/)), the **AQA
 spec point** the slide serves or misses plus the topic's examiner-insight and misconceptions
 ([`editor/reference/spec/`](editor/reference/spec/)), and the **real exam question** the content
@@ -77,12 +79,14 @@ reads of the same deck**, produced in two separate Claude chats
 ([`blind-edit-output-test-1.md`](runs/blind-01/2026-07-22/blind-edit-output-test-1.md),
 [`blind-edit-output-test-2.md`](runs/blind-01/2026-07-22/blind-edit-output-test-2.md)).
 
-Both reads produced the **same structure**: the finding schema, worst-first severity ordering,
-the same three CRITICAL findings on the same slides and the same anchors (the prokaryote
-list-rule on slide 6, magnification-for-resolution on slide 8, the two-point uncertainty value
-on slide 11), and the same MAJOR core on slides 4 and 7. The exact set of MINOR findings
-differs between the two chats — one read flagged the missing diagram, the other flagged the
-narrow exam-format coverage.
+Both reads produced the **same structure and the same high-severity findings**: the finding
+schema, worst-first severity ordering, the same three CRITICAL findings on the same slides and
+the same anchors (the prokaryote list-rule on slide 6, magnification-for-resolution on slide 8,
+the two-point uncertainty value on slide 11), and the same four MAJOR findings on slides 4 and
+7. Seven findings match across both reads. The two diverge only at the margins: one read
+surfaced a MINOR on the missing diagram, the other a MINOR on the narrow exam-format coverage,
+and one read made an extra MAJOR (the drawing skill the lesson never has the class practise)
+that the other left out.
 
 That difference is not a defect; it is the honest shape of the claim. **The structure is
 reproducible because the rules live in the folder, not in a prompt someone has to remember —
@@ -144,20 +148,25 @@ divergence is a contribution; a silent override is a defect.
 
 ## The intellectual lineage — what this inherits and what it adds
 
-This entry answers a field. It **matches** the favourite's stack (claimline): findings that
-quote verbatim and cite the exact rule and never rewrite; a self-tested harness with negative
-tests that verify the verifier; CI on every push; a judge guide with a fast no-install verify;
-an honest open-defects file; and a rewrite-bait test the editor must refuse three times while
-still reviewing. It inherits the wider field's hardest-won lessons: **receipts** over polished
-simulation (a run shipped in full as evidence — the single most-rewarded axis), a **populated**
+This entry answers a field, as reviewed in
+[`build/communitycompetitions.md`](build/communitycompetitions.md) (the builder's competitor
+analysis — the source for the comparative claims in this section). It **matches** the stack
+that review names as the one to beat (claimline): findings that quote verbatim and cite the
+exact rule and never rewrite; a self-tested harness with negative tests that verify the
+verifier; CI on every push; a judge guide with a fast no-install verify; an honest open-defects
+file; and a rewrite-bait test the editor must refuse three times while still reviewing. It
+inherits the field's hardest-won lessons as that review records them: **receipts** over polished
+simulation (a run shipped in full as evidence — the most-rewarded axis), a **populated**
 accretion layer over a designed-but-empty one (the most-punished miss), and deterministic work
 pinned in code over model diligence.
 
-What it **adds** that no one in the #9 field had done: a **binary PowerPoint input** with the
-fabrication check applied to extracted slide text, and **triple-source citations** where the
-bar cited one. Both of those are depth axes taken a layer further than the field, on a domain
+What it **adds** that, per that review, no other #9 entry combined: a **binary PowerPoint
+input** with the fabrication check applied to extracted slide text, and **triple-source
+citations** where the bar cited one. Both are depth axes taken a layer further, on a domain
 narrow enough to be a genuine specialism — one exam board, one subject, one topic built to full
-depth. That was the opening, and this entry is built to take it.
+depth. That was the opening this build was made to take. (These are claims about the field, not
+things a fresh clone can verify on its own; what the clone *can* verify — the gate, the
+extractor, the anchored findings, the reproducibility — is Levels 1–3 of the judge guide.)
 
 ---
 

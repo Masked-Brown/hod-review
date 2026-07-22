@@ -50,11 +50,12 @@ Read the fields:
 - **QUESTION** — the deliverable. It hands the decision back. It is a real question, not a
   fix wearing a question mark, and the read never closes on anything but a question.
 
-## 2. One finding, triple-anchored
+## 2. One finding drawing on more than one anchor
 
-The depth axis of this build: a single finding anchored to a pedagogical principle **and**
-a spec point **and** the real question the content is examined by. Slide 11 carries all
-three:
+The depth axis of this build is that the read can anchor to three kinds of source — a
+pedagogical principle, an AQA spec point, and the real exam question the content is assessed
+by — and a single finding can carry more than one at once. Slide 11 names two in its anchor
+fields and grounds a third in its WHY:
 
 ```
 SEVERITY: MAJOR
@@ -66,9 +67,12 @@ WHY: The class goes from the bare equation straight to six questions with no wor
 QUESTION: What worked magnification calculation does this class see before the worksheet, and does it make the separate unit-conversion step visible?
 ```
 
-`Rosenshine 4 — Provide models` (the pedagogy), `AQA 3.2.1 — exam Q7` (the assessed format),
-and the WHY ties them to a named mark the class will drop. That is what turns "this starter
-is weak" into something a teacher cannot argue with.
+`Rosenshine 4 — Provide models` (the pedagogy) and `AQA 3.2.1 — exam Q7` (the spec topic and
+the assessed exam question) are named in the anchor fields; the WHY ties them to the specific
+mark AQA pays for the unit conversion. The third kind of anchor — a skipped *content* spec
+point — is what §5's cell-fractionation finding carries, so across the read all three
+reference layers are cited; a given finding carries whichever of them apply. That is what
+turns "this starter is weak" into something a teacher cannot argue with.
 
 ## 3. A finding anchored on pedagogy alone
 
