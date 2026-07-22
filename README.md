@@ -5,10 +5,11 @@ Biology — the way a Head of Department reads your deck before Monday morning. 
 points at what will fail with your class and hands it back. It never rewrites your
 lesson.**
 
-> **Build status: SKELETON (manifest M1 complete).**
+> **Build status: SUBSTANCE (manifests M1–M2.5 complete; enforcement, run, and ship pending).**
 > This repo is being built by a manifest-driven pipeline (see [`plan.md`](plan.md)).
-> The structure and the persona are in place; the scored substance and the code gate
-> are authored by later manifests. The [manifest status](#build-status) table below
+> The structure, the persona, the scored substance (rules, frameworks, finding schema)
+> and the bespoke AQA reference layer are in place; the code gate and the constructed
+> run are authored by later manifests. The [manifest status](#build-status) table below
 > says exactly what is shipped and what is pending — nothing here claims to work that
 > does not yet exist.
 
@@ -144,8 +145,8 @@ one waits on. The build process is itself an ICM demonstration.
 | Manifest | Scope | State |
 |---|---|---|
 | **M1** | Research + scaffold: skeleton, `identity.md`, README skeleton | ✅ complete |
-| **M2** | Substance: `rules.md`, frameworks, finding schema | ⬜ pending |
-| **M2.5** | Bespoke AQA corpus layer + training-table schema | ⬜ pending |
+| **M2** | Substance: `rules.md`, frameworks, finding schema | ✅ complete |
+| **M2.5** | Bespoke AQA corpus layer + training-table schema | ✅ complete |
 | **M3** | Enforcement: `extract.py`, `check.py`, tests, CI | ⬜ pending |
 | **M4** | Validation: the constructed run, receipts, populated training table | ⬜ pending |
 | **M5** | Ship: examples, judge guide, open-defects, claims audit | ⬜ pending |
