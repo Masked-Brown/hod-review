@@ -1,0 +1,15 @@
+# Placeholder CI — scaffolded by M1 (skeleton). Owner: manifest M3.
+#
+# The real workflow runs extract.py + check.py + tests/verify.py (incl. --selftest)
+# on every push. M3 replaces this file with that gate. This placeholder is
+# manual-dispatch only so it never runs — or fails — on push before M3 exists.
+name: verify (placeholder — M3 implements)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Skeleton placeholder. The verification gate is implemented in manifest M3."
