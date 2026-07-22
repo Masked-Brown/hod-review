@@ -1,0 +1,6 @@
+# Python bytecode and caches. The M3 tooling is stdlib + python-pptx and ships no
+# build artifacts; the fixture deck is built at test time, never committed.
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
